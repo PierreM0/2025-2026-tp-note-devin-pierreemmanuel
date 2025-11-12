@@ -11,7 +11,7 @@ const Search = () => {
         style={{ borderWidth: 2, borderColor: "black" }}
       />
 
-      <Button onPressOut={() => console.log(text)} title="bonjour" />
+      <Button onPress={() => alert(text)} title="bonjour" />
     </View>
   );
 };
