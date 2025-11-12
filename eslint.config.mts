@@ -1,10 +1,11 @@
-// eslint.config.mjs
+// eslint.config.mts
+import type { Linter } from "eslint";
 import tseslint from "@typescript-eslint/eslint-plugin";
 import tsparser from "@typescript-eslint/parser";
 import prettierPlugin from "eslint-plugin-prettier";
 import prettierConfig from "eslint-config-prettier";
 
-export default [
+const config: Linter.Config[] = [
   {
     files: ["**/*.ts"],
 
@@ -40,3 +41,5 @@ export default [
     },
   },
 ];
+
+export default config;

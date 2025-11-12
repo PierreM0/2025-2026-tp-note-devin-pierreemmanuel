@@ -1,20 +1,29 @@
-import { View, Text, Image } from "react-native";
+import { View, Image } from "react-native";
+import { Text } from "react-native-paper";
 import { type MovieDetailsProps } from "./movieDetailsOnList";
+import { type Movie } from "../types";
 
 export const MovieDetails = ({ route }: MovieDetailsProps) => {
-  const movie = route.params.movie;
+  const movie: Movie = route.params.movie;
+
   return (
-    <View>
+    <View style={{ display: "flex", margin: 20, gap: "10px" }}>
+      <Text variant="titleLarge">{movie.title}</Text>
+      <Text variant="labelMedium">
+        {movie.original_language}: ({movie.original_title})
+      </Text>
+      <Text>{movie.release_date}</Text>
       <Image
+        style={{ height: "50%" }}
         source={{
-          uri:
-            `https://image.tmdb.org/t/p/w500${movie.poster_path}` ||
-            "https://freesvg.org/img/Image-Not-Found.png",
+          uri: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
         }}
+        resizeMode="contain"
       />
-      <Text>{movie.title}</Text>
-      <Text>{movie.vote_average}</Text>
-      <Text>{movie.original_language}</Text>
+      <Text>Popularity: {movie.popularity}</Text>
+      <Text variant="labelLarge">
+        {movie.vote_average} / 10 with {movie.vote_count} votes
+      </Text>
       <Text>{movie.overview}</Text>
     </View>
   );

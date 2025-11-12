@@ -3,7 +3,6 @@ import {
   createStaticNavigation,
 } from "@react-navigation/native";
 
-import { PaperProvider } from "react-native-paper";
 import { Provider as StoreProvider } from "react-redux";
 import Movies from "./components/movies";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -24,9 +23,7 @@ export type RootStackParamList = StaticParamList<typeof Stack>;
 export default function App() {
   return (
     <StoreProvider store={store}>
-      <PaperProvider>
-        <Navigation />;
-      </PaperProvider>
+      <Navigation />
     </StoreProvider>
   );
 }

@@ -1,7 +1,7 @@
 type Personne = {
-    id: string
-    nom: string
-    prenom: string
-}
+  id: string;
+  nom: string;
+  prenom: string;
+};
 
-export default Personne
+export default Personne;

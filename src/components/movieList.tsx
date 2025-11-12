@@ -25,12 +25,14 @@ const MovieList = ({ movies }: MovieListProps) => {
 
   const dispatch = useDispatch();
 
+  movies = Array.from(new Set(movies));
+
   return (
     <View>
       {movies.map((movie) => {
         return (
           <Card
-            key={movie.id}
+            key={movie.original_title + movie.id}
             style={{
               margin: 10,
               borderRadius: 10,
@@ -43,6 +45,10 @@ const MovieList = ({ movies }: MovieListProps) => {
               })
             }
           >
+            <Card.Title
+              title={movie.original_title}
+              subtitle={movie.release_date}
+            />
             <Card.Cover
               source={{
                 uri:
@@ -50,11 +56,13 @@ const MovieList = ({ movies }: MovieListProps) => {
                   "https://freesvg.org/img/Image-Not-Found.png",
               }}
             />
-            <Card.Title title={movie.title} titleStyle={{ fontSize: 20 }} />
             <Card.Content>
-              <Text style={{ fontStyle: "italic" }}>{movie.release_date}</Text>
+              <Text style={{ fontStyle: "italic" }}>
+                {movie.vote_average} / 10
+              </Text>
               <Text>{movie.overview}</Text>
             </Card.Content>
+
             <Card.Actions>
               {!isInFavourite(movie.id) ? (
                 <Button onPressOut={() => dispatch(push(movie))}>

@@ -1,4 +1,4 @@
-import { ScrollView } from "react-native";
+import { ScrollView, View } from "react-native";
 import movies1 from "../helpers/PopularMovies_p1.json" with { type: "json" };
 import movies2 from "../helpers/PopularMovies_p2.json" with { type: "json" };
 
@@ -32,15 +32,17 @@ const Movies = () => {
   );
 
   return (
-    <ScrollView contentContainerStyle={{ flex: 1, alignItems: "center" }}>
-      <Button
-        mode="elevated"
-        style={{ maxWidth: 200, margin: 20 }}
-        onPressOut={() => navigation.navigate("Favorites")}
-      >
-        Favoris ({favouriteMovies.length})
-      </Button>
-      <MovieList movies={movies} />
+    <ScrollView>
+      <View style={{ flex: 1, alignItems: "center" }}>
+        <Button
+          mode="elevated"
+          style={{ maxWidth: 200, margin: 20 }}
+          onPressOut={() => navigation.navigate("Favorites")}
+        >
+          Favoris ({favouriteMovies.length})
+        </Button>
+        <MovieList movies={movies} />
+      </View>
     </ScrollView>
   );
 };
