@@ -1,0 +1,4 @@
+- doc de react-native-paper https://callstack.github.io/react-native-paper/docs/
+- avant d'envoyer le code :
+    - `npx prettier -w .`
+    - `npx eslint`
