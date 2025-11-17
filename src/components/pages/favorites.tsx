@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
-import { RootState } from "./stores/store";
+import { RootState } from "@/stores/store";
 import { ScrollView, View } from "react-native";
-import MovieList from "./components/movieList";
+import MovieList from "@/components/organism/movieList";
 
 const Favorite = () => {
   const favouriteMovies = useSelector(

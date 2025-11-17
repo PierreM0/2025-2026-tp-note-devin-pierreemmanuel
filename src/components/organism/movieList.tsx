@@ -1,11 +1,11 @@
 import { View, Text } from "react-native";
-import { Movie } from "../types";
+import { Movie } from "@/types";
 import { Button, Card } from "react-native-paper";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
-import { RootStackParamList } from "../App";
-import { RootState } from "../stores/store";
+import { RootStackParamList } from "@/App";
+import { RootState } from "@/stores/store";
 import { useDispatch, useSelector } from "react-redux";
-import { push, remove } from "../stores/favouriteSlice";
+import { push, remove } from "@/stores/favouriteSlice";
 
 type MovieListProps = {
   movies: Array<Movie>;

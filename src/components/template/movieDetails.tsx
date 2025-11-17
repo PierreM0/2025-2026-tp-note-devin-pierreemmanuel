@@ -1,7 +1,7 @@
 import { View, Image } from "react-native";
 import { Text } from "react-native-paper";
-import { type MovieDetailsProps } from "./movieDetailsOnList";
-import { type Movie } from "../types";
+import { type MovieDetailsProps } from "@/components/molecule/movieDetailsOnList";
+import { type Movie } from "@/types";
 
 export const MovieDetails = ({ route }: MovieDetailsProps) => {
   const movie: Movie = route.params.movie;

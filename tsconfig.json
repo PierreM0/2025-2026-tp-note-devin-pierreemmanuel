@@ -3,6 +3,9 @@
   "compilerOptions": {
     "strict": true,
     "noImplicitAny": true,
-    "strictPropertyInitialization": true
+    "strictPropertyInitialization": true,
+    "paths": {
+      "@/*": ["src/*"]
+    }
   }
 }

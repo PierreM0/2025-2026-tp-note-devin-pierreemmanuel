@@ -1,5 +1,5 @@
 import { Image, View } from "react-native";
-import { Movie } from "../types";
+import { Movie } from "@/types";
 import { Text } from "react-native-paper";
 
 export type MovieDetailsProps = {
