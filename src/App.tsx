@@ -4,16 +4,16 @@ import {
 } from "@react-navigation/native";
 
 import { Provider as StoreProvider } from "react-redux";
-import Movies from "@/components/pages/movies";
+import Jobs from "@/components/pages/jobs";
 import { createStackNavigator } from "@react-navigation/stack";
-import { MovieDetails } from "@/components/template/movieDetails";
+import JobDetails from "@/components/template/jobDetails";
 import { store } from "@/stores/store";
 import Favorite from "@/components/pages/favorites";
 
 const Stack = createStackNavigator({
   screens: {
-    Liste: Movies,
-    Details: MovieDetails,
+    Liste: Jobs,
+    Details: JobDetails,
     Favorites: Favorite,
   },
 });
