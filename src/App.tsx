@@ -9,6 +9,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import JobDetails from "@/components/template/jobDetails";
 import { store } from "@/stores/store";
 import Favorite from "@/components/pages/favorites";
+import { Provider } from "react-native-paper";
 
 const Stack = createStackNavigator({
   screens: {
@@ -23,7 +24,9 @@ export type RootStackParamList = StaticParamList<typeof Stack>;
 export default function App() {
   return (
     <StoreProvider store={store}>
-      <Navigation />
+      <Provider>
+        <Navigation />
+      </Provider>
     </StoreProvider>
   );
 }

@@ -6,7 +6,7 @@ export type Job = {
   ville: string;
   codePostal: string | null;
   rue: string;
-  numeroRue: number;
+  numeroRue: string;
   entreprisePhoto: string;
   description: string;
   date: string;
