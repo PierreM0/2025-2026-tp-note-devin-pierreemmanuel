@@ -13,6 +13,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/stores/store";
 import { push, remove } from "@/stores/favouriteSlice";
 import React from "react";
+import { NavigationProp, useNavigation } from "@react-navigation/native";
+import { RootStackParamList } from "@/App";
 
 export type JobDetailProps = {
   route: {
@@ -66,6 +68,9 @@ const JobDetails = ({ route }: JobDetailProps) => {
     } as StyleProp<ViewStyle>,
   };
 
+  const navigation =
+    useNavigation<NavigationProp<RootStackParamList, "Details">>();
+
   return (
     <ScrollView
       style={styles.scrollviewMain}
@@ -112,7 +117,10 @@ const JobDetails = ({ route }: JobDetailProps) => {
         <Button
           style={styles.buttonStyle}
           mode="contained"
-          onPress={() => dispatch(push(job))}
+          onPress={() => {
+            dispatch(push(job));
+            navigation.navigate("Favorites");
+          }}
         >
           Ajouter au favoris
         </Button>

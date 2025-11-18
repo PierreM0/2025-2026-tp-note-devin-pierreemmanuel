@@ -4,7 +4,7 @@ import jobsImported from "@/helpers/jobs.json" with { type: "json" };
 import { NavigationProp, useNavigation } from "@react-navigation/native";
 import { Job } from "@/types";
 import { RootStackParamList } from "@/App";
-import { Button } from "react-native-paper";
+import { Text, Button } from "react-native-paper";
 import { useSelector } from "react-redux";
 import { RootState } from "@/stores/store";
 import JobList from "@/components/organism/jobList";
@@ -41,6 +41,7 @@ const Jobs = () => {
         jobsImported={jobsImported as Job[]}
         setFilteredJobs={setFilteredJobs}
       />
+      <Text>{filteredJobs.length} annonces</Text>
       <JobList jobs={filteredJobs} />
     </View>
   );
